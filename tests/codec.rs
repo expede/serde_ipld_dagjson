@@ -33,6 +33,6 @@ fn test_codec_links() {
     let expected = iter::repeat(cid).take(3).collect::<Vec<_>>();
     let encoded = DagJsonCodec::encode_to_vec(&data).unwrap();
 
-    let links = DagJsonCodec::links(&encoded).unwrap().collect::<Vec<_>>();
+    let links = DagJsonCodec.links(&encoded).unwrap().collect::<Vec<_>>();
     assert_eq!(links, expected);
 }
