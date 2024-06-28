@@ -32,11 +32,11 @@ where
         }
     }
 
-    fn decode<R: BufRead>(reader: R) -> Result<T, Self::Error> {
+    fn decode<R: BufRead>(&self, reader: R) -> Result<T, Self::Error> {
         Ok(crate::from_reader(reader)?)
     }
 
-    fn encode<W: Write>(writer: W, data: &T) -> Result<(), Self::Error> {
+    fn encode<W: Write>(&self, writer: W, data: &T) -> Result<(), Self::Error> {
         Ok(crate::to_writer(writer, data)?)
     }
 }
